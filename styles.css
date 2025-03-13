@@ -1,0 +1,281 @@
+:root {
+    --coral: #FF6F61;      /* Fun, youthful coral */
+    --mint: #6CC644;       /* Fresh green */
+    --dark: #2D2D2D;       /* Sleek dark */
+    --light: #F9E7E7;      /* Soft light pink */
+    --gray: #A9A9A9;       /* Neutral gray */
+    --white: #FFFFFF;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+body.light-mode {
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+/* Intro Section */
+.intro-section {
+    height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1679323212467-344ff61bc38e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* High-quality Rexburg winter image */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.intro-content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem 4rem;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 80%;
+}
+
+.intro-title {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 4.5rem;
+    color: var(--white);
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: 2px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.intro-subtitle {
+    font-size: 1.8rem;
+    color: var(--coral);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    margin: 0;
+    font-weight: 600;
+    animation: fadeInUp 1s ease-out 0.3s backwards;
+}
+
+.intro-btn {
+    background-color: var(--mint);
+    color: var(--white);
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-out 0.6s backwards;
+}
+
+.intro-btn:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Content Section */
+.content-section {
+    display: flex;
+    min-height: 100vh;
+}
+
+.report-box {
+    width: 30%;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+body.dark-mode .report-box {
+    background-color: #3A3A3A;
+}
+
+.report-box h2 {
+    color: var(--coral);
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+.report-box textarea,
+.report-box input[type="file"],
+.report-box select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--gray);
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.submit-btn {
+    background-color: var(--coral);
+    color: var(--white);
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #E65B50;
+}
+
+.feedback {
+    color: var(--mint);
+    font-weight: 600;
+}
+
+.hidden {
+    display: none;
+}
+
+.vibe-check {
+    margin: 1rem 0;
+}
+
+/* Map Container */
+.map-container {
+    width: 70%;
+    padding: 2rem;
+    background-color: var(--light);
+    box-sizing: border-box;
+}
+
+body.dark-mode .map-container {
+    background-color: #2D2D2D;
+}
+
+.map-container h2 {
+    color: var(--coral);
+    font-size: 2rem;
+}
+
+#map {
+    height: calc(100vh - 6rem);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle {
+    margin-top: 1rem;
+}
+
+.theme-toggle button {
+    background-color: var(--coral);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 20px;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+/* Meme Section */
+.meme-section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.meme-section h2 {
+    color: var(--coral);
+    font-size: 2rem;
+}
+
+#daily-meme {
+    max-width: 100%; /* Ensures it fits the container */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: block; /* Ensures it’s visible */
+    margin: 0 auto; /* Centers the image */
+}
+
+#new-meme {
+    background-color: var(--mint);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 20px;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+/* Popup */
+.info-window {
+    font-family: 'Poppins', sans-serif;
+}
+
+.resolve-btn {
+    background-color: var(--mint);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-section {
+        flex-direction: column;
+    }
+    .report-box, .map-container {
+        width: 100%;
+    }
+    .intro-title {
+        font-size: 3rem;
+    }
+    .intro-subtitle {
+        font-size: 1.3rem;
+    }
+    .intro-btn {
+        padding: 0.8rem 2rem;
+        font-size: 1.2rem;
+    }
+    .intro-content {
+        padding: 1.5rem 2rem;
+    }
+    #map {
+        height: 50vh;
+    }
+}
+
+/* Custom Marker (Leaflet) */
+.custom-marker {
+    border: none !important;
+    background: none !important;
+}
